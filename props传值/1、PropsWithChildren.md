@@ -8,9 +8,8 @@
 import React, { PropsWithChildren } from "react";
 import { View, Text } from "react-native";
 
-type CardProps = {
-  title: string;
-} & PropsWithChildren<{}>; // 使用 PropsWithChildren 类型
+type CardProps = PropsWithChildren<{ title: string }>;
+// type CardProps = { title: string } & PropsWithChildren<{}>;
 
 const Card = ({ title, children }: CardProps) => {
   return (
@@ -21,15 +20,13 @@ const Card = ({ title, children }: CardProps) => {
   );
 };
 
-const App = () => {
+export const App = () => {
   return (
     <Card title="Card 标题">
       <Text>这是 Card 的内容。</Text>
     </Card>
   );
 };
-
-export default App;
 ```
 
 在上面的示例中，Card 组件接受一个 title 属性作为字符串，并且使用 PropsWithChildren 类型表示该组件可以接受子元素作为 children。App 组件使用 Card 组件，并在其内部传递了一个 Text 组件作为子元素。

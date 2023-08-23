@@ -1,1 +1,1 @@
-记录学习 React native
+哈哈 hi，记录学习 React native
